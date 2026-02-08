@@ -18,18 +18,26 @@ body {
     overflow: hidden;
 }
 
-/* FULL SCREEN HEART BACKGROUND */
+/* FULL PAGE HEART BACKGROUND */
 body::before {
-    content: "❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    font-size: 30px;
-    line-height: 50px;
-    color: #ff99c2;
-    opacity: 0.25;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(255, 153, 194, 0.4) 31px
+    ),
+    repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 30px,
+        rgba(255, 153, 194, 0.4) 31px
+    );
     z-index: -1;
 }
 
@@ -67,7 +75,7 @@ img {
 
 <body>
 
-<!-- SOUND EFFECTS -->
+<!-- SOUND EFFECTS (NAMES UNCHANGED AS YOU ASKED) -->
 <audio id="clickSound">
     <source src="click.mp3" type="audio/mpeg">
 </audio>
@@ -96,7 +104,7 @@ img {
     <img src="chocolate.jpg" onclick="playBubble(); choose('chocolate')">
 </div>
 
-<!-- PAGE 3  (SECOND LAST PAGE - SIMPLIFIED AS YOU ASKED) -->
+<!-- PAGE 3 (SECOND LAST PAGE) -->
 <div id="page3" class="hidden">
     <h2>WILL YOU BE MY BOYFRIEND AGAIN? 💖</h2>
 
@@ -167,5 +175,6 @@ function finalPage() {
 
 </body>
 </html>
+
 
 

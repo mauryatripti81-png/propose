@@ -75,13 +75,13 @@ img {
 
 <body>
 
-<!-- SOUND EFFECTS (NAMES UNCHANGED AS YOU ASKED) -->
-<audio id="clickSound">
+<!-- SOUND EFFECTS -->
+<audio id="clickSound" preload="auto">
     <source src="click.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="bubbleSound">
-    <source src="bugle.mp3" type="audio/mpeg">
+<audio id="bubbleSound" preload="auto">
+    <source src="bubble.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
@@ -104,7 +104,7 @@ img {
     <img src="chocolate.jpg" onclick="playBubble(); choose('chocolate')">
 </div>
 
-<!-- PAGE 3 (SECOND LAST PAGE) -->
+<!-- PAGE 3 -->
 <div id="page3" class="hidden">
     <h2>WILL YOU BE MY BOYFRIEND AGAIN? 💖</h2>
 
@@ -112,7 +112,7 @@ img {
     <button onclick="playClick(); finalPage();">Yes Of Course</button>
 </div>
 
-<!-- FINAL PAGE (AS ORIGINALLY DEFINED) -->
+<!-- FINAL PAGE -->
 <div id="page4" class="hidden">
     <h2>Good boy 😌💗</h2>
 
@@ -127,18 +127,23 @@ img {
 
 <script>
 
+// CLICK SOUND FOR ALL BUTTONS
 function playClick() {
     var sound = document.getElementById("clickSound");
+    sound.pause();
     sound.currentTime = 0;
-    sound.play();
+    sound.play().catch(function(){});
 }
 
+// BUBBLE SOUND ONLY FOR PHOTOS
 function playBubble() {
     var sound = document.getElementById("bubbleSound");
+    sound.pause();
     sound.currentTime = 0;
-    sound.play();
+    sound.play().catch(function(){});
 }
 
+// PAGE NAVIGATION
 function openPage2() {
     document.getElementById("page1").classList.add("hidden");
     document.getElementById("page2").classList.remove("hidden");

@@ -15,24 +15,22 @@ body {
     height: 100vh;
     text-align: center;
     margin: 0;
+    overflow: hidden;
 }
 
+/* FULL SCREEN HEART BACKGROUND */
 body::before {
-    content: "❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
+    content: "❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    font-size: 40px;
+    height: 100%;
+    font-size: 30px;
+    line-height: 50px;
     color: #ff99c2;
-    opacity: 0.3;
-    animation: move 10s linear infinite;
+    opacity: 0.25;
     z-index: -1;
-}
-
-@keyframes move {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100%); }
 }
 
 .container {
@@ -84,6 +82,8 @@ img {
 <div id="page1">
     <h2>Click to Open 💌</h2>
 
+    <p>Push this button like you push my buttons always 😜</p>
+
     <button onclick="playClick(); openPage2();">Open</button>
 </div>
 
@@ -96,22 +96,15 @@ img {
     <img src="chocolate.jpg" onclick="playBubble(); choose('chocolate')">
 </div>
 
-<!-- PAGE 3 -->
+<!-- PAGE 3  (SECOND LAST PAGE - SIMPLIFIED AS YOU ASKED) -->
 <div id="page3" class="hidden">
-    <h2>Will you be my...</h2>
-
-    <p>
-       Boyfriend 💖<br><br>
-       Valentine 💌<br><br>
-       Husband 💍<br><br>
-       Best Friend Always 🥹
-    </p>
+    <h2>WILL YOU BE MY BOYFRIEND AGAIN? 💖</h2>
 
     <button onclick="playClick(); finalPage();">Yes</button>
-    <button onclick="playClick(); finalPage();">Yes of Course</button>
+    <button onclick="playClick(); finalPage();">Yes Of Course</button>
 </div>
 
-<!-- FINAL PAGE -->
+<!-- FINAL PAGE (AS ORIGINALLY DEFINED) -->
 <div id="page4" class="hidden">
     <h2>Good boy 😌💗</h2>
 
@@ -119,9 +112,7 @@ img {
 
     <p>Go and collect it downstairs 😘</p>
 
-    <h2>WILL YOU BE MY BOYFRIEND AGAIN? 💖</h2>
-
-    <button onclick="playClick(); alert('Yayyyy! I love youuu 💕')">YES ❤️</button>
+    <h3>I loveee youuuuuuuu ❤️</h3>
 </div>
 
 </div>
@@ -176,4 +167,5 @@ function finalPage() {
 
 </body>
 </html>
+
 

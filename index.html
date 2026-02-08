@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Cutu 💖</title>
+
+<style>
+
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #ffe6f0;
+    color: red;
+    margin-top: 40px;
+    overflow-x: hidden;
+}
+
+/* Light darker pink hearts effect */
+body::before {
+    content: "❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 40px;
+    color: #ff99c2;
+    opacity: 0.3;
+    animation: move 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: #ff4d88;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+img {
+    width: 200px;
+    height: 220px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid #ff4d88;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1">
+    <h2>Hieee Cutu 💕</h2>
+    <p>Push this button like you push my buttons always 😜</p>
+
+    <button onclick="openPage2()">Click to Open Karaoke</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="hidden">
+    <h3>Pick the one you adore the most 💝</h3>
+
+    <img src="me.JPG" onclick="choose('me')">
+    <img src="rose.jpg" onclick="choose('rose')">
+    <img src="chocolate.jpg" onclick="choose('chocolate')">
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="hidden">
+    <h2>Will you be my...</h2>
+
+    <p>
+       Boyfriend 💖<br><br>
+       Valentine 💌<br><br>
+       Husband 💍<br><br>
+       Best Friend Always 🥹
+    </p>
+
+    <button onclick="finalPage()">Yes</button>
+    <button onclick="finalPage()">Yes of Course</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div id="page4" class="hidden">
+    <h2>Good boy 😌💗</h2>
+
+    <p>You get a prize for being the cutest boyfriend ever!</p>
+
+    <p>Go and collect it downstairs 😘</p>
+
+    <h3>I loveee youuuuuuuu ❤️</h3>
+</div>
+
+<script>
+
+function openPage2() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+}
+
+function choose(option) {
+    if(option == "me") {
+        alert("Correct option! You get to live 😌💖");
+        goNext();
+    }
+
+    if(option == "rose") {
+        alert("So you decided to choose the pretty one... just like you 🌹");
+        goNext();
+    }
+
+    if(option == "chocolate") {
+        alert("Great pick! Where’s mine then? 🍫😏");
+        goNext();
+    }
+}
+
+function goNext() {
+    document.getElementById("page2").style.display = "none";
+    document.getElementById("page3").style.display = "block";
+}
+
+function finalPage() {
+    document.getElementById("page3").style.display = "none";
+    document.getElementById("page4").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>

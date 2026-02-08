@@ -7,14 +7,16 @@
 
 body {
     font-family: Arial;
-    text-align: center;
     background-color: #ffe6f0;
     color: red;
-    margin-top: 40px;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
 }
 
-/* Light darker pink hearts effect */
 body::before {
     content: "❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤ ❤";
     position: fixed;
@@ -31,6 +33,10 @@ body::before {
 @keyframes move {
     0% { transform: translateY(0); }
     100% { transform: translateY(100%); }
+}
+
+.container {
+    width: 100%;
 }
 
 button {
@@ -63,21 +69,31 @@ img {
 
 <body>
 
+<!-- SOUND EFFECTS -->
+<audio id="clickSound">
+    <source src="click.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="bubbleSound">
+    <source src="bugle.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
 <!-- PAGE 1 -->
 <div id="page1">
-    <h2>Hieee Cutu 💕</h2>
-    <p>Push this button like you push my buttons always 😜</p>
+    <h2>Click to Open 💌</h2>
 
-    <button onclick="openPage2()">Click to Open Karaoke</button>
+    <button onclick="playClick(); openPage2();">Open</button>
 </div>
 
 <!-- PAGE 2 -->
 <div id="page2" class="hidden">
     <h3>Pick the one you adore the most 💝</h3>
 
-    <img src="me.JPG" onclick="choose('me')">
-    <img src="rose.jpg" onclick="choose('rose')">
-    <img src="chocolate.jpg" onclick="choose('chocolate')">
+    <img src="me.JPG" onclick="playBubble(); choose('me')">
+    <img src="rose.jpg" onclick="playBubble(); choose('rose')">
+    <img src="chocolate.jpg" onclick="playBubble(); choose('chocolate')">
 </div>
 
 <!-- PAGE 3 -->
@@ -91,8 +107,8 @@ img {
        Best Friend Always 🥹
     </p>
 
-    <button onclick="finalPage()">Yes</button>
-    <button onclick="finalPage()">Yes of Course</button>
+    <button onclick="playClick(); finalPage();">Yes</button>
+    <button onclick="playClick(); finalPage();">Yes of Course</button>
 </div>
 
 <!-- FINAL PAGE -->
@@ -103,14 +119,30 @@ img {
 
     <p>Go and collect it downstairs 😘</p>
 
-    <h3>I loveee youuuuuuuu ❤️</h3>
+    <h2>WILL YOU BE MY BOYFRIEND AGAIN? 💖</h2>
+
+    <button onclick="playClick(); alert('Yayyyy! I love youuu 💕')">YES ❤️</button>
+</div>
+
 </div>
 
 <script>
 
+function playClick() {
+    var sound = document.getElementById("clickSound");
+    sound.currentTime = 0;
+    sound.play();
+}
+
+function playBubble() {
+    var sound = document.getElementById("bubbleSound");
+    sound.currentTime = 0;
+    sound.play();
+}
+
 function openPage2() {
-    document.getElementById("page1").style.display = "none";
-    document.getElementById("page2").style.display = "block";
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
 }
 
 function choose(option) {
@@ -131,16 +163,17 @@ function choose(option) {
 }
 
 function goNext() {
-    document.getElementById("page2").style.display = "none";
-    document.getElementById("page3").style.display = "block";
+    document.getElementById("page2").classList.add("hidden");
+    document.getElementById("page3").classList.remove("hidden");
 }
 
 function finalPage() {
-    document.getElementById("page3").style.display = "none";
-    document.getElementById("page4").style.display = "block";
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page4").classList.remove("hidden");
 }
 
 </script>
 
 </body>
 </html>
+
